@@ -1,15 +1,14 @@
-<script lang="typescript">
+<script lang="ts">
+	import { taskStore } from './stores';
+
 	export let showMore = false;
 	export let task;
-
-	const deleteTask = () => {
-		console.log('delete task');
-	};
+	export let deleteTask;
 </script>
 
 <article class="task">
 	<header>
-		<a href="#close" aria-label="Close" class="close" on:click={() => deleteTask()}> x </a>
+		<a href="#close" aria-label="Close" class="close" on:click={() => deleteTask(task.id)}> x </a>
 		<h4>{task.name}</h4>
 	</header>
 	<p>{task.date}</p>
